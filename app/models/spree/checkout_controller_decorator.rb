@@ -16,4 +16,6 @@ module Spree
   end
 end
 
-::Spree::CheckoutController.prepend Spree::CheckoutControllerDecorator
+if SpreeGateway::Engine.frontend_available?
+  ::Spree::CheckoutController.prepend Spree::CheckoutControllerDecorator
+end
