@@ -51,6 +51,7 @@ module SpreeGateway
     end
 
     def self.frontend_available?
+      return true
       @@frontend_available ||= ::Rails::Engine.subclasses.map(&:instance).map{ |e| e.class.to_s }.include?('Spree::Frontend::Engine')
     end
 
